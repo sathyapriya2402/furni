@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    :root { --cream: #FFF3E3; --gold: #B88E2F; --green: #2EC1AC; }
+ @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 3s linear infinite;
+    }
+
+    #preloader {
+      transition: opacity 1s ease, filter 1s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+  </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+  <img src="assets/logo.png" alt="Loading..." class="w-24 h-24 animate-spin-slow" />
+</div>
+
+    <!-- Header -->
+  <header class="bg-[#B88E2F;] py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="Logo" class="w-10 h-10">
+        <h1 class="font-bold text-lg text-[#FFFFFF]">Wooden Dreams</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm  text-[#FFFFFF] text-700 font-semibold">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="categories.html">Categories</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center  gap-3">
+        <button><img src="assets/search.png" class="w-8" alt="Search"></button>
+        <button><img src="assets/cart.png" class="w-8" alt="Cart"></button>
+        <button><img src="assets/heart.png" class="w-8" alt="Liked"></button>
+       <div class="ml-auto">
+  <button id="authBtn" class="text-sm bg-[#B88E2F] text-white px-6 py-2 rounded-none uppercase font-semibold hover:bg-[#9c731f] transition duration-300">
+    Logout
+  </button>
+</div>
+
+
+      </div>
+    </div>
+  </header>
+
+<!-- Main Content -->
+<main class="py-10 px-4 md:px-8 lg:px-12 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-[var(--gold)] mb-2">Popular Categories</h2>
+    <p class="text-gray-600 mb-10">Organize your space, elevate your style</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <!-- Category Card -->
+      
+
+      <div class="text-center">
+        <img src="assets/dining-set.png" alt="Dining Set" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Dining Set</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/decor.png" alt="Decor" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Decor</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/studytable.png" alt="Study Tables" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Study Tables</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/mattress.png" alt="Mattress" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Mattress</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/beds.png" alt="Beds" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Beds</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/wadrobe.png" alt="Wardrobes" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Wardrobes</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/sofa.png" alt="Sofa" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Sofa</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/chairs.png" alt="Chairs" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Chairs</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/outdoor.png" alt="Outdoor" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Outdoor</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/sidetable.png" alt="Side Table" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Side Table</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/dressingtable.png" alt="Dressing Table" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Dressing Table</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/tvunits.png" alt="TV Units" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Tv Unites</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/bookshelves.png" alt="Book Shelves" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Book Shelves</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/coffeetables.png" alt="Coffee Tables" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Coffee Tables</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/living.png" alt="Living" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Living</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/patiosets.png" alt="Patio Sets" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Patio Sets</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/gardenbenches.png" alt="Garden Benches" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Garden Benches</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/hutch.png" alt="Hutch" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Hutch</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/arrmchairs.png" alt="Armchairs" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Armchairs</p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/recliner.jpg" alt="Recliner" class="rounded shadow-md mb-2">
+        <p class="text-[var(--gold)] font-semibold">Recliner</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 1s ease';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  });
+</script>
+
+  <!-- Footer -->
+  <footer class="bg-[#B88E2F] text-white font-[Poppins] pt-12 pb-6 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Left: Logo and Description -->
+    <div class="col-span-1 md:col-span-2">
+      <div class="flex items-center mb-4">
+        <img src="assets/logo.png" alt="Logo" class="w-10 h-10 mr-2">
+        <h2 class="text-xl font-bold">Wooden Dreams</h2>
+      </div>
+      <p class="text-sm mb-4 max-w-md leading-relaxed">
+        "At Wooden Dreams, we craft furniture that brings warmth and comfort to your home. Our wooden creations are designed to inspire sweet dreams and peaceful nights. Every piece is carefully crafted to provide a haven of relaxation and tranquility. Sleep tight, dream big with Wooden Dreams."
+      </p>
+      <div class="space-y-2 text-sm">
+        <p class="flex items-center gap-2">
+          <img src="assets/location.png" alt="location" class="w-4 h-4"> 
+          Head Office: 13/5, Post office opposite, Chennai.876543
+        </p>
+        <p class="flex items-center gap-2">
+          <img src="assets/globe.png" alt="website" class="w-4 h-4"> 
+          www.woodendreams.in
+        </p>
+        <p class="flex items-center gap-2">
+          <img src="assets/mail.png" alt="mail" class="w-4 h-4"> 
+          woodendreams@gamil.com
+        </p>
+      </div>
+    </div>
+
+    <!-- Middle: Links -->
+    <div>
+      <h4 class="font-bold mb-4 uppercase">Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Categories</a></li>
+        <li><a href="#" class="hover:underline">Shop</a></li>
+        <li><a href="#" class="hover:underline">Blog</a></li>
+        <li><a href="#" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Right: Help + Newsletter -->
+    <div>
+      <h4 class="font-bold mb-4 uppercase">Help</h4>
+      <ul class="space-y-2 text-sm mb-6">
+        <li><a href="#" class="hover:underline">Payment Options</a></li>
+        <li><a href="#" class="hover:underline">Returns</a></li>
+        <li><a href="#" class="hover:underline">Privacy Policies</a></li>
+      </ul>
+
+      <h4 class="font-bold mb-2 text-lg">Subscribe</h4>
+      <div class="flex">
+        <input type="email" placeholder="Enter your email" class="px-3 py-2 rounded-l-md text-sm text-black focus:outline-none w-full">
+        <button class="bg-white text-[#B88E2F] font-bold px-4 py-2 rounded-r-md hover:bg-gray-100 text-sm">SIGN UP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social + Bottom -->
+  <div class="max-w-7xl mx-auto mt-10 border-t border-white pt-4 flex flex-col md:flex-row items-center justify-between px-4 text-sm">
+    <p class="text-white">&copy; 2025 Wooden Dreams. All rights reserved</p>
+    <div class="flex items-center gap-3 mt-4 md:mt-0">
+      <span class="font-semibold text-white">Follow Us</span>
+      <div class="flex gap-2">
+        <a href="#"><img src="assets/instagram.png" alt="Instagram" class="w-6 h-6 bg-#B88E2F p-1 rounded-md"></a>
+        <a href="#"><img src="assets/google.png" alt="Google" class="w-6 h-6 bg-#B88E2F p-1 rounded-md"></a>
+        <a href="#"><img src="assets/facebook.png" alt="Facebook" class="w-6 h-6 bg-#B88E2F p-1 rounded-md"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

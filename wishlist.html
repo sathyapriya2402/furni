@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Wishlist | Wooden Dreams</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.4s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF3E3] font-[Poppins]">
+
+  <div class="container mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-6">My Wishlist ❤️</h1>
+    
+    <div id="wishlistContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+
+    <div id="emptyState" class="text-center text-gray-500 mt-10 hidden">
+      <p class="text-lg">Your wishlist is empty 💔</p>
+      <a href="shop.html" class="inline-block mt-4 px-4 py-2 bg-[#B88E2F] text-white rounded hover:bg-[#9c731f] transition">
+        Go to Shop
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function renderWishlist() {
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const container = document.getElementById('wishlistContainer');
+      const emptyState = document.getElementById('emptyState');
+
+      container.innerHTML = '';
+
+      if (wishlist.length === 0) {
+        emptyState.classList.remove('hidden');
+        return;
+      } else {
+        emptyState.classList.add('hidden');
+      }
+
+      wishlist.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = "bg-white shadow p-4 rounded fade-in-up";
+
+        card.innerHTML = `
+          <img src="${item.image}" class="w-full h-48 object-cover rounded mb-3" alt="${item.name}" />
+          <h2 class="text-lg font-semibold">${item.name}</h2>
+          <p class="text-[#B88E2F] font-bold mt-1">₹ ${item.price}</p>
+          <button onclick="removeFromWishlist(${index})"
+            class="mt-3 px-3 py-1 border border-red-500 text-red-500 rounded hover:bg-red-500 hover:text-white transition text-sm">
+            Remove
+          </button>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function removeFromWishlist(index) {
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      wishlist.splice(index, 1);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      renderWishlist();
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', renderWishlist);
+  </script>
+</body>
+</html>

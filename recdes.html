@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recliner - Modern Comfy Recliner | Wooden Dreams</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 3s linear infinite;
+    }
+
+    #preloader {
+      transition: opacity 1s ease, filter 1s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .border {
+      transition: box-shadow 0.3s ease;
+    }
+
+    .border:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn.danger {
+      background-color: transparent;
+      border: 1px solid #dc3545;
+      color: #dc3545;
+      transition: all 0.3s ease;
+    }
+
+    .btn.danger:hover {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .btn-dark { transition: transform 0.2s ease; }
+
+    .btn-dark:active { transform: scale(0.95); }
+
+    .nav-tabs .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-tabs .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--gold);
+      transition: width 0.3s;
+    }
+
+    .nav-tabs .nav-link:hover::after,
+    .nav-tabs .nav-link.active::after {
+      width: 100%;
+    }
+
+    #deliveryResult {
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    #deliveryResult.show {
+      opacity: 1;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+  <img src="assets/logo.png" alt="Loading..." class="w-24 h-24 animate-spin-slow" />
+</div>
+
+<!-- Header -->
+<header class="bg-[#B88E2F] py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6">
+    <div class="flex items-center gap-2">
+      <img src="assets/logo.png" alt="Logo" class="w-10 h-10">
+      <h1 class="font-bold text-lg text-white">Wooden Dreams</h1>
+    </div>
+    <nav class="hidden md:flex space-x-6 text-sm text-white font-semibold">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="categories.html">Categories</a>
+      <a href="shop.html">Shop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button><img src="assets/search.png" class="w-8" alt="Search"></button>
+      <a href="cart.html" class="relative">
+        <img src="assets/cart.png" class="w-8" alt="Cart">
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+      </a>
+      <a href="wishlist.html"><img src="assets/heart.png" class="w-8" alt="Wishlist"></a>
+      <button id="authBtn" class="text-sm bg-[#B88E2F] text-white px-6 py-2 rounded-none uppercase font-semibold hover:bg-[#9c731f] transition duration-300">Logout</button>
+    </div>
+  </div>
+</header>
+
+<!-- Product Section -->
+<div class="container my-5">
+  <div class="row">
+    <!-- Thumbnails -->
+    <div class="col-md-2 product-thumb d-flex flex-column gap-2">
+      <img src="assets/rec1.webp" class="img-thumbnail" onclick="updateMainImage(this.src)">
+      <img src="assets/rec2.webp" class="img-thumbnail" onclick="updateMainImage(this.src)">
+      <img src="assets/rec3.jpg" class="img-thumbnail" onclick="updateMainImage(this.src)">
+    </div>
+
+    <!-- Main Image -->
+    <div class="col-md-5">
+      <div class="product-gallery mb-3">
+        <img id="mainProductImage" src="assets/recliner.jpg" alt="Modern Comfy Recliner">
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-5">
+      <h2 class="fw-bold">Modern Comfy Recliner</h2>
+      <p class="text-muted">Rs. 1,25,000.00</p>
+      <p>⭐⭐⭐⭐⭐ (4.9 rating)</p>
+
+      <hr>
+      <p class="fw-bold">Quantity:</p>
+      <input type="number" value="1" min="1" class="form-control w-25 mb-3">
+      <button class="btn btn-dark px-4" onclick="addToCart('Modern Comfy Recliner', 'assets/recliner1.png', 125000)">
+        Add to Cart
+      </button>
+
+      <button class="btn danger mt-2" onclick="addToWishlist('Modern Comfy Recliner', 'assets/recliner1.png', '125000')">
+        <i class="fas fa-heart me-1"></i> Add to Wishlist
+      </button>
+
+      <hr>
+      <p><strong>SKU:</strong> RECL125</p>
+      <p><strong>Category:</strong> Recliner</p>
+      <p><strong>Tags:</strong> Luxury, Recliner, Living Room, Ergonomic</p>
+
+      <!-- Delivery Check -->
+      <div class="mt-4">
+        <label for="pincode" class="form-label fw-semibold">Check Delivery:</label>
+        <div class="d-flex gap-3 flex-wrap">
+          <input type="text" id="pincode" maxlength="6" placeholder="Enter Pincode" class="form-control w-auto">
+          <button onclick="checkDelivery()" class="btn btn-warning text-white fw-semibold">Check</button>
+        </div>
+        <p id="deliveryResult" class="mt-2 fw-medium"></p>
+      </div>
+
+      <!-- Offers -->
+      <div class="container my-4">
+        <h5 class="fw-bold mb-3">Offers</h5>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+          <div class="col"><div class="border p-3"><i class="fas fa-money-bill-wave text-warning me-2"></i> Upto ₹2,000 Cashback</div></div>
+          <div class="col"><div class="border p-3"><i class="fas fa-credit-card text-success me-2"></i> Extra 10% on Credit Cards</div></div>
+          <div class="col"><div class="border p-3"><i class="fas fa-percent text-primary me-2"></i> No Cost EMI Available</div></div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="d-flex flex-wrap justify-content-between text-center gap-3">
+        <div class="flex-fill"><i class="fas fa-truck fa-2x text-primary"></i><p class="small">Free Delivery</p></div>
+        <div class="flex-fill"><i class="fas fa-rotate-left fa-2x text-primary"></i><p class="small">14 Days Return</p></div>
+        <div class="flex-fill"><i class="fas fa-tools fa-2x text-primary"></i><p class="small">Easy Assembly</p></div>
+        <div class="flex-fill"><i class="fas fa-award fa-2x text-primary"></i><p class="small">1 Year Warranty</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs my-5" id="descTab">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desc">Description</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#addinfo">Additional Info</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#reviews">Reviews</button></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="desc">
+      <p>The Modern Comfy Recliner is the epitome of luxury and relaxation. Designed with premium leatherette and high-density foam, it provides ultimate comfort whether you're watching TV, reading, or just unwinding. With an ergonomic structure and smooth reclining mechanism, this recliner adjusts effortlessly to your comfort. It adds a bold yet elegant touch to any living room, home theater, or lounge area.</p>
+    </div>
+    <div class="tab-pane fade" id="addinfo">
+      <p>Weight: 32 kg<br>Material: Premium Leatherette + Solid Wood Frame<br>Dimensions: 98 x 102 x 110 cm (L x W x H)<br>Color: Mocha Brown<br>Warranty: 1 Year on manufacturing defects</p>
+    </div>
+    <div class="tab-pane fade" id="reviews">
+      <p>⭐⭐⭐⭐⭐ This recliner is heaven! Super comfortable and premium feel. – <i>Ravi S.</i></p>
+      <p>⭐⭐⭐⭐ Very sturdy and worth the price. – <i>Neha R.</i></p>
+      <p>⭐⭐⭐⭐⭐ Got delivered in just 3 days. Great service. – <i>Arjun M.</i></p>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <h3 class="mt-5 mb-3">Related Products</h3>
+  <div class="row related-products">
+    <div class="col-md-3"><img src="assets/lolito.png"><p class="fw-bold mt-2">Lolito</p></div>
+    <div class="col-md-3"><img src="assets/patio.png"><p class="fw-bold mt-2">Patio</p></div>
+    <div class="col-md-3"><img src="assets/leviosa.png"><p class="fw-bold mt-2">Leviosa</p></div>
+    <div class="col-md-3"><img src="assets/pingky.png"><p class="fw-bold mt-2">Pingky</p></div>
+  </div>
+</div>
+
+<!-- Scripts (same as your original script logic) -->
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 1s ease';
+      setTimeout(() => { preloader.style.display = 'none'; }, 500);
+    }
+  });
+
+  function updateMainImage(src) {
+    document.getElementById('mainProductImage').src = src;
+  }
+
+  function addToCart(name, image, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name, image, price, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartBadge();
+    alert(`${name} added to cart!`);
+  }
+
+  function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const badge = document.getElementById('cartCount');
+    if (badge) {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'inline' : 'none';
+    }
+  }
+
+  function checkDelivery() {
+    const pincode = document.getElementById('pincode').value;
+    const result = document.getElementById('deliveryResult');
+    if (pincode.length !== 6 || isNaN(pincode)) {
+      result.className = "text-danger";
+      result.textContent = "⚠️ Please enter a valid 6-digit pincode.";
+      return;
+    }
+    let days = 6;
+    if (pincode.startsWith('60') || pincode.startsWith('11')) days = 3;
+    else if (pincode.startsWith('70') || pincode.startsWith('50')) days = 4;
+
+    const today = new Date();
+    const deliveryDate = new Date(today.setDate(today.getDate() + days));
+    const formatted = deliveryDate.toLocaleDateString('en-IN', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+    result.className = "text-success";
+    result.textContent = `✅ Estimated delivery by ${formatted}`;
+  }
+
+  function addToWishlist(name, image, price) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const exists = wishlist.some(item => item.name === name);
+    if (!exists) {
+      wishlist.push({ name, image, price });
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      alert(`${name} added to wishlist!`);
+    } else {
+      alert(`${name} is already in wishlist.`);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', updateCartBadge);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wooden Dreams</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+      --cream: #FFF3E3;
+      --gold: #B88E2F;
+      --green: #2EC1AC;
+      --red: #E97171;
+    }
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 3s linear infinite;
+    }
+
+    #preloader {
+      transition: opacity 1s ease, filter 1s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-white">
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+  <img src="assets/logo.png" alt="Loading..." class="w-24 h-24 animate-spin-slow" />
+</div>
+
+  <!-- Header -->
+  <header class="bg-[#B88E2F;] py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="Logo" class="w-10 h-10">
+        <h1 class="font-bold text-lg text-[#FFFFFF]">Wooden Dreams</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm  text-[#FFFFFF] text-700 font-semibold">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="categories.html">Categories</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center  gap-3">
+        <button><img src="assets/search.png" class="w-8" alt="Search"></button>
+        <button><img src="assets/cart.png" class="w-8" alt="Cart"></button>
+        <button><img src="assets/heart.png" class="w-8" alt="Liked"></button>
+       <div class="ml-auto">
+  <button id="authBtn" class="text-sm bg-[#B88E2F] text-white px-6 py-2 rounded-none uppercase font-semibold hover:bg-[#9c731f] transition duration-300">
+    Logout
+  </button>
+</div>
+
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="relative">
+    <img src="assets/beautiful-tan-modern-furniture-1p8lqahjzvgac2vw.png" class="w-full object-content max-h-[500px]" />
+    <div class="absolute top-[10%] right-[10%] bg-[var(--cream)] p-6 rounded-lg max-w-sm shadow-lg">
+      <p class="text-sm text-gray-500">New Arrival</p>
+      <h2 class="text-xl font-bold text-[#B88E2F] mb-2">Discover Our New Collection</h2>
+      <p class="text-sm mb-4">Experience the art of wooden craftsmanship in our latest collection</p>
+      <button class="bg-[#B88E2F] text-white px-4 py-2 rounded-md text-sm">Buy Now</button>
+    </div>
+  </section>
+
+ <section class="py-20 px-4 md:px-10 bg-white max-w-screen-xl mx-auto">
+  <h2 class="text-3xl font-bold text-center text-[#B88E2F] mb-2">Popular Categories</h2>
+  <p class="text-center text-gray-500 mb-10">Organize your space, elevate your style</p>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <!-- Recliner -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/Recliner.jpg" alt="Recliner" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Recliner</h3>
+    </div>
+
+    <!-- Dining Set -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/dining-set.png" alt="Dining Set" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Dining Set</h3>
+    </div>
+
+    <!-- Décor -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/decor.png" alt="Décor" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Décor</h3>
+    </div>
+
+    <!-- Study Tables -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/studytable.png" alt="Study Tables" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Study Tables</h3>
+    </div>
+
+    <!-- Mattress -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/mattress.png" alt="Mattress" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Mattress</h3>
+    </div>
+
+    <!-- Beds -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/beds.png" alt="Beds" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Beds</h3>
+    </div>
+
+    <!-- Wardrobes -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/wadrobe.png" alt="Wardrobes" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Wardrobes</h3>
+    </div>
+
+    <!-- Sofa -->
+    <div class="bg-[#FFF3E3] text-[#B88E2F] rounded-2xl shadow-xl p-6 text-center flex flex-col h-full transform transition duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
+      <img src="assets/sofa.png" alt="Sofa" class="w-full h-64 object-cover rounded-xl mb-5 transition duration-300 hover:brightness-110">
+      <h3 class="font-extrabold text-xl">Sofa</h3>
+    </div>
+  </div>
+ <!-- Explore All Button -->
+<div class="mt-10 text-center">
+  <a href="#" class="inline-block bg-[#B88E2F] text-white px-6 py-3 rounded-md text-sm font-semibold shadow-md hover:bg-[#9c731f] transition duration-300">
+    Explore All
+  </a>
+</div>
+
+</section>
+ 
+<section class="py-20 px-4 md:px-10 bg-white max-w-screen-xl mx-auto">
+  <h2 class="text-3xl font-bold text-center text-[#B88E2F] mb-2">Best Sellers</h2>
+  <p class="text-center text-gray-500 mb-10">Our most loved pieces</p>
+<!-- Container with padding between the cards and the edges -->
+<div class="px-10 py-8 bg-[#FFF3E3] font-[Poppins]">
+  <!-- 3 cards per row with spacing -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+    
+    <!-- Syltherin -->
+    <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto">
+      <div class="p-3">
+        <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/syltherin.png" alt="Syltherin">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Syltherin</h3>
+        <p class="text-gray-600 text-sm mb-3">Elegant and comfortable armchair for your living room.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-[#B88E2F] font-bold text-base">₹25,000 <span class="line-through text-gray-400 text-sm ml-1">₹32,000</span></div>
+          <button class="bg-[#B88E2F] text-white px-3 py-1.5 rounded-lg hover:bg-[#9c731f] transition duration-300 text-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lolito -->
+    <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto">
+      <div class="p-3">
+        <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/lolito.png" alt="Lolito">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Lolito</h3>
+        <p class="text-gray-600 text-sm mb-3">Stylish sofa for modern interiors with great comfort.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-[#B88E2F] font-bold text-base">₹22,000 <span class="line-through text-gray-400 text-sm ml-1">₹28,000</span></div>
+          <button class="bg-[#B88E2F] text-white px-3 py-1.5 rounded-lg hover:bg-[#9c731f] transition duration-300 text-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pingky -->
+    <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto">
+      <div class="p-3">
+        <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/pingky.png" alt="Pingky">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Pingky</h3>
+        <p class="text-gray-600 text-sm mb-3">Premium quality bed with a cozy finish for perfect rest.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-[#B88E2F] font-bold text-base">₹30,000 <span class="line-through text-gray-400 text-sm ml-1">₹36,000</span></div>
+          <button class="bg-[#B88E2F] text-white px-3 py-1.5 rounded-lg hover:bg-[#9c731f] transition duration-300 text-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patio -->
+    <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto">
+      <div class="p-3">
+        <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/patio.png" alt="Patio">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Patio</h3>
+        <p class="text-gray-600 text-sm mb-3">Compact and durable chair perfect for balconies or patios.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-[#B88E2F] font-bold text-base">₹15,000 <span class="line-through text-gray-400 text-sm ml-1">₹19,000</span></div>
+          <button class="bg-[#B88E2F] text-white px-3 py-1.5 rounded-lg hover:bg-[#9c731f] transition duration-300 text-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Griofo -->
+    <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto">
+      <div class="p-3">
+        <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/grifo.png" alt="Griofo">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Griofo</h3>
+        <p class="text-gray-600 text-sm mb-3">Modern wooden table perfect for compact dining spaces.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-[#B88E2F] font-bold text-base">₹18,000 <span class="line-through text-gray-400 text-sm ml-1">₹24,000</span></div>
+          <button class="bg-[#B88E2F] text-white px-3 py-1.5 rounded-lg hover:bg-[#9c731f] transition duration-300 text-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leviosa -->
+    <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto">
+      <div class="p-3">
+        <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/leviosa.png" alt="Leviosa">
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Leviosa</h3>
+        <p class="text-gray-600 text-sm mb-3">Chic designer lamp that adds elegance to any space.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-[#B88E2F] font-bold text-base">₹12,000 <span class="line-through text-gray-400 text-sm ml-1">₹16,000</span></div>
+          <button class="bg-[#B88E2F] text-white px-3 py-1.5 rounded-lg hover:bg-[#9c731f] transition duration-300 text-sm">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<div class="mt-10 text-center">
+  <a href="#" class="inline-block bg-[#B88E2F] text-white px-6 py-3 rounded-md text-sm font-semibold shadow-md hover:bg-[#9c731f] transition duration-300">
+    Explore All
+  </a>
+</div>
+</div>
+
+
+
+<!-- New Arrivals Section -->
+<section class="py-20 px-4 md:px-10 bg-white max-w-screen-xl mx-auto font-[Poppins]">
+  <h2 class="text-3xl font-bold text-center text-[#B88E2F] mb-2">New Arrivals</h2>
+  <p class="text-center text-gray-500 mb-10">Freshly crafted pieces just for your space</p>
+
+  <!-- Container with cream background and inner padding -->
+  <div class="px-10 py-8 bg-[#FFF3E3] rounded-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+
+      <!-- Product Card Template -->
+      <!-- Respira -->
+      <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto relative">
+        <span class="absolute top-3 right-3 bg-[#2EC1AC] text-white text-xs px-2 py-1 rounded">New</span>
+        <div class="p-3">
+          <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/respira.png" alt="Respira">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Respira</h3>
+          <p class="text-gray-600 text-sm mb-3">Minimalist chair for serene spaces.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-[#B88E2F] font-bold text-base">₹12,000 <span class="line-through text-gray-400 text-sm ml-1">₹16,000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Muggo -->
+      <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto relative">
+        <span class="absolute top-3 right-3 bg-[#2EC1AC] text-white text-xs px-2 py-1 rounded">New</span>
+        <div class="p-3">
+          <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/muggo.png" alt="Muggo">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Muggo</h3>
+          <p class="text-gray-600 text-sm mb-3">Modern mug table with elegance.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-[#B88E2F] font-bold text-base">₹8,500 <span class="line-through text-gray-400 text-sm ml-1">₹11,000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Potty -->
+      <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto relative">
+        <span class="absolute top-3 right-3 bg-[#2EC1AC] text-white text-xs px-2 py-1 rounded">New</span>
+        <div class="p-3">
+          <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/potty.png" alt="Potty">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Potty</h3>
+          <p class="text-gray-600 text-sm mb-3">Stylish plant pot with wooden charm.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-[#B88E2F] font-bold text-base">₹2,500 <span class="line-through text-gray-400 text-sm ml-1">₹3,800</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assgad Sofa -->
+      <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto relative">
+        <span class="absolute top-3 right-3 bg-[#2EC1AC] text-white text-xs px-2 py-1 rounded">New</span>
+        <div class="p-3">
+          <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/assgad sofa.png" alt="Assgad Sofa">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Assgad Sofa</h3>
+          <p class="text-gray-600 text-sm mb-3">Luxury comfort in modern design.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-[#B88E2F] font-bold text-base">₹35,000 <span class="line-through text-gray-400 text-sm ml-1">₹42,000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paatio -->
+      <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto relative">
+        <span class="absolute top-3 right-3 bg-[#2EC1AC] text-white text-xs px-2 py-1 rounded">New</span>
+        <div class="p-3">
+          <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/paatio.png" alt="Paatio">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Paatio</h3>
+          <p class="text-gray-600 text-sm mb-3">Elegant chair perfect for balconies.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-[#B88E2F] font-bold text-base">₹16,000 <span class="line-through text-gray-400 text-sm ml-1">₹20,000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattio -->
+      <div class="w-[260px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mx-auto relative">
+        <span class="absolute top-3 right-3 bg-[#2EC1AC] text-white text-xs px-2 py-1 rounded">New</span>
+        <div class="p-3">
+          <img class="w-full h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105" src="assets/pattio.png" alt="Pattio">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">Pattio</h3>
+          <p class="text-gray-600 text-sm mb-3">Compact wooden seating solution.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-[#B88E2F] font-bold text-base">₹14,000 <span class="line-through text-gray-400 text-sm ml-1">₹18,000</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Explore All Button -->
+    <div class="mt-10 text-center">
+      <a href="#" class="inline-block bg-[#B88E2F] text-white px-6 py-3 rounded-md text-sm font-semibold shadow-md hover:bg-[#9c731f] transition duration-300">
+        Explore All
+      </a>
+    </div>
+  </div>
+</section>
+    <!-- Testimonials -->
+<section class="bg-[#FFF3E3] py-16 px-4 md:px-10">
+  <h2 class="text-3xl font-bold text-center text-[#B88E2F] mb-10">What Customers Say About Wooden Dreams</h2>
+  
+  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    <!-- Testimonial 1 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <p class="text-gray-600 mb-4">"The quality of the furniture is amazing. It fits perfectly with my home aesthetics."</p>
+      <div class="flex items-center gap-4">
+        <img src="assets/client1.png" class="w-12 h-12 rounded-full object-cover" alt="User 1">
+        <div>
+          <p class="text-[#B88E2F] font-bold">Ananya Sharma</p>
+          <p class="text-sm text-gray-500">Interior Designer</p>
+          <div class="flex text-[#B88E2F]">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <p class="text-gray-600 mb-4">"Excellent craftsmanship and timely delivery. Wooden Dreams never disappoints!"</p>
+      <div class="flex items-center gap-4">
+        <img src="assets/client2.png" class="w-12 h-12 rounded-full object-cover" alt="User 2">
+        <div>
+          <p class="text-[#B88E2F] font-bold">Ravi Menon</p>
+          <p class="text-sm text-gray-500">Homeowner</p>
+          <div class="flex text-[#B88E2F]">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><polygon points="10,1 12.6,7.5 19.5,7.5 13.9,11.9 16.3,18.5 10,14.2 3.7,18.5 6.1,11.9 0.5,7.5 7.4,7.5"/></svg>
+        <svg class="w-5 h-5" viewBox="0 0 24 24">
+      <defs>
+        <linearGradient id="half-grad">
+          <stop offset="50%" stop-color="#B88E2F" />
+          <stop offset="50%" stop-color="lightgray" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#half-grad)"
+        d="M12 17.3L6.2 20.6 7.6 14.1 2.8 9.8 9.4 9 12 3 14.6 9 21.2 9.8 16.4 14.1 17.8 20.6z" />
+    </svg>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </section>
+  
+
+
+  <!-- Footer -->
+  <footer class="bg-[#B88E2F] text-white font-[Poppins] pt-12 pb-6 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Left: Logo and Description -->
+    <div class="col-span-1 md:col-span-2">
+      <div class="flex items-center mb-4">
+        <img src="assets/logo.png" alt="Logo" class="w-10 h-10 mr-2">
+        <h2 class="text-xl font-bold">Wooden Dreams</h2>
+      </div>
+      <p class="text-sm mb-4 max-w-md leading-relaxed">
+        "At Wooden Dreams, we craft furniture that brings warmth and comfort to your home. Our wooden creations are designed to inspire sweet dreams and peaceful nights. Every piece is carefully crafted to provide a haven of relaxation and tranquility. Sleep tight, dream big with Wooden Dreams."
+      </p>
+      <div class="space-y-2 text-sm">
+        <p class="flex items-center gap-2">
+          <img src="assets/location.png" alt="location" class="w-4 h-4"> 
+          Head Office: 13/5, Post office opposite, Chennai.876543
+        </p>
+        <p class="flex items-center gap-2">
+          <img src="assets/globe.png" alt="website" class="w-4 h-4"> 
+          www.woodendreams.in
+        </p>
+        <p class="flex items-center gap-2">
+          <img src="assets/mail.png" alt="mail" class="w-4 h-4"> 
+          woodendreams@gamil.com
+        </p>
+      </div>
+    </div>
+
+    <!-- Middle: Links -->
+    <div>
+      <h4 class="font-bold mb-4 uppercase">Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Categories</a></li>
+        <li><a href="#" class="hover:underline">Shop</a></li>
+        <li><a href="#" class="hover:underline">Blog</a></li>
+        <li><a href="#" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Right: Help + Newsletter -->
+    <div>
+      <h4 class="font-bold mb-4 uppercase">Help</h4>
+      <ul class="space-y-2 text-sm mb-6">
+        <li><a href="#" class="hover:underline">Payment Options</a></li>
+        <li><a href="#" class="hover:underline">Returns</a></li>
+        <li><a href="#" class="hover:underline">Privacy Policies</a></li>
+      </ul>
+
+      <h4 class="font-bold mb-2 text-lg">Subscribe</h4>
+      <div class="flex">
+        <input type="email" placeholder="Enter your email" class="px-3 py-2 rounded-l-md text-sm text-black focus:outline-none w-full">
+        <button class="bg-white text-[#B88E2F] font-bold px-4 py-2 rounded-r-md hover:bg-gray-100 text-sm">SIGN UP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social + Bottom -->
+  <div class="max-w-7xl mx-auto mt-10 border-t border-white pt-4 flex flex-col md:flex-row items-center justify-between px-4 text-sm">
+    <p class="text-white">&copy; 2025 Wooden Dreams. All rights reserved</p>
+    <div class="flex items-center gap-3 mt-4 md:mt-0">
+      <span class="font-semibold text-white">Follow Us</span>
+      <div class="flex gap-2">
+        <a href="#"><img src="assets/instagram.png" alt="Instagram" class="w-6 h-6 bg-#B88E2F p-1 rounded-md"></a>
+        <a href="#"><img src="assets/google.png" alt="Google" class="w-6 h-6 bg-#B88E2F p-1 rounded-md"></a>
+        <a href="#"><img src="assets/facebook.png" alt="Facebook" class="w-6 h-6 bg-#B88E2F p-1 rounded-md"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- JavaScript for Auth Button -->
+  <script>
+    const authBtn = document.getElementById("authBtn");
+    const user = localStorage.getItem("userEmail");
+
+    if (user) {
+      authBtn.textContent = "Logout";
+      authBtn.onclick = () => {
+        localStorage.removeItem("userEmail");
+        location.reload();
+      };
+    } 
+    //else {
+      //authBtn.textContent = "Login";
+     // authBtn.onclick = () => {
+        //window.location.href = "login.html";
+    //  };
+    //}
+    window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 1s ease';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  });
+  document.getElementById('authBtn')?.addEventListener('click', () => {
+  // Optionally clear login session or user data
+  // localStorage.removeItem('user'); 
+
+  alert('Logged out successfully!');
+  window.location.href = 'index.html'; // or 'login.html' if you have a login page
+});
+
+  </script>
+</body>
+</html>
